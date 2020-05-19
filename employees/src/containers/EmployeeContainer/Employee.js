@@ -16,7 +16,7 @@ const style = {
 class Employee extends Component {
 
 
-    
+
     // declare state
     state = {
         employee: [],
@@ -40,13 +40,14 @@ class Employee extends Component {
                         lastName: employee.name.last,
                         Phone: employee.phone,
                         Email: employee.email,
+                        Age:employee.dob.age,
                         Country: employee.location.country
 
                     }))
                 })
             })
             .catch(error => console.log(error))
-        
+
 
     }
 
@@ -57,23 +58,59 @@ class Employee extends Component {
 
         this.setState({
             search: value
-        })  
+        })
 
+
+    }
+    handleSearchField = (event) => {
+        event.preventDefault();
+        var searchResult = this.state.employee.filter(person => person.firstName.toLowerCase() === this.state.search)
+        this.setState({
+            employee: searchResult
+        })
+    }
+
+    // filterName = (firstval, secondVal) => {
+    //     const nameOne = firstval.employee.firstName.toLowerCase()
+    //     const nameTwo = secondVal.employee.firstName.toLowerCase()
+
+    //     let value = 0;
+    //     if (nameOne > nameTwo) {
+    //         value = 1;
+    //     }
+    //     else if (nameTwo > nameOne) {
+    //         value = -1
+    //     }
+    //     return value;
         
+    // }
+    
+    filterField = (section) => {
+        switch(section){
+        case"age":
+        const employeeAge = [...this.state.employee]
+        employeeAge.sort((first, second) => (first.Age > second.Age ? 1: -1))
+        this.setState({
+            employee:employeeAge
+        })
+        break;
+
+        case"name":
+        const employeeName = [...this.state.employee]
+        employeeName.sort((first, second) => (first.firstName > second.firstName ? 1: -1))
+        this.setState({
+            employee:employeeName
+        })
+        break;
+        default:
+            const employeeDefault = [...this.state.employee]
+            this.setState({
+                employee:employeeDefault
+            })
+        }
     }
-   handleSearchField = (event) =>{
-         event.preventDefault(); 
-         var searchResult = this.state.employee.filter(person => person.firstName.toLowerCase() === this.state.search)
-                this.setState({
-                    employee: searchResult
-                })
-     }
 
-    filterName = () =>{
 
-    }
-
-     
 
     // searchValue = (search) =>{
     //    var searchResult = this.state.employee.filter(person => person.firstName === search
@@ -84,7 +121,7 @@ class Employee extends Component {
     // }
 
     render() {
-        
+
         return (
             <Wrapper style={style}>
                 {/* employee component */}
@@ -97,33 +134,38 @@ class Employee extends Component {
 
                 </SearchForm >
                 <table className="table table-hover table-dark" >
-                <thead style={style}>
-                <tr>
-                    <th scope="col">Image </th>
-                    <th scope="col"
-                    onClick={this.filterName}
-                    >Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Location</th>
-                </tr>
-            </thead>
-                {this.state.employee.map((personInfo,id) => {
-                    return(
-                        <Table key={id}
-                            Image={personInfo.Image}
-                            firstName={personInfo.firstName}
-                            lastName={personInfo.lastName}
-                            Phone={personInfo.Phone}
-                            Email={personInfo.Email}
-                            Country={personInfo.Country}
-                        >
-                        </Table>
-                    )
+                    <thead style={style}>
+                        <tr>
+                            <th scope="col">Image </th>
+                            <th scope="col"
+                               className="btn"
+                               onClick={()=>this.filterField("name")}
+                            >Name</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Location</th>
+                            <th scope="col" className="btn"
+                             onClick={()=>this.filterField("age")}
+                            >Age</th>
+                        </tr>
+                    </thead>
+                    {this.state.employee.map((personInfo, id) => {
+                        return (
+                            <Table key={id}
+                                Image={personInfo.Image}
+                                firstName={personInfo.firstName}
+                                lastName={personInfo.lastName}
+                                Phone={personInfo.Phone}
+                                Email={personInfo.Email}
+                                Country={personInfo.Country}
+                                Age={personInfo.Age}
+                            >
+                            </Table>
+                        )
 
                     })}
                 </table>
-                
+
 
 
 

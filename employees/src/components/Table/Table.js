@@ -18,6 +18,7 @@ return (
     <td >{props.Phone}</td>
     <td >{props.Email}</td>
     <td >{props.Country}</td>
+    <td >{props.Age}</td>
       
     </tr>
    
