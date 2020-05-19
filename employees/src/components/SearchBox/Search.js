@@ -4,7 +4,6 @@ import PropType from 'prop-types'
 function search(props) {
     const style = {
         fontFamily: "'Satisfy', cursive",
-        background: "grey",
         color: "white",
     }
 

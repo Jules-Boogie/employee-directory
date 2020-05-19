@@ -69,6 +69,10 @@ class Employee extends Component {
                 })
      }
 
+    filterName = () =>{
+
+    }
+
      
 
     // searchValue = (search) =>{
@@ -96,7 +100,9 @@ class Employee extends Component {
                 <thead style={style}>
                 <tr>
                     <th scope="col">Image </th>
-                    <th scope="col">Name</th>
+                    <th scope="col"
+                    onClick={this.filterName}
+                    >Name</th>
                     <th scope="col">Phone</th>
                     <th scope="col">Email</th>
                     <th scope="col">Location</th>
