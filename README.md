@@ -4,7 +4,7 @@
 ## Summary 
  The app lets you get basic information about all the employees at a workplace. This app was built from scratch with the help of the javascript library called React. After drawing out the various sections of the application, ReactJS was used to build stateful and stateless components. The stateful component is class based and the stateless components are functions. The SRC folder where most of the code was added was divided into components, layout, and hoc folders. Each folder housed components with different uses. 
 
-appi.herokuapp.com/)
+
 
 ## App Photo
 ![App Photo](https://github.com/Jules-Boogie/employee-directory/blob/master/employees/public/Capture.PNG)
