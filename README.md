@@ -9,9 +9,9 @@
 ## App Photo
 The app photos show that employee information filtered by name and age. The inbuilt sort method was used to achieve this. 
 
-![App Photo](https://github.com/Jules-Boogie/employee-directory/blob/master/employees/public/usersbyage.PNG)
+![App Photo](https://github.com/Jules-Boogie/employee-directory/blob/master/public/usersbyage.PNG)
 
-![App Photo](https://github.com/Jules-Boogie/employee-directory/blob/master/employees/public/usersbyname.PNG)
+![App Photo](https://github.com/Jules-Boogie/employee-directory/blob/master/public/usersbyname.PNG)
 
 
 
