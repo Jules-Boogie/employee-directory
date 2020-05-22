@@ -13,6 +13,8 @@ The app photos show that employee information filtered by name and age. The inbu
 
 ![App Photo](https://github.com/Jules-Boogie/employee-directory/blob/master/public/usersbyname.PNG)
 
+## GitHub Pages 
+https://jules-boogie.github.io/employee-directory/
 
 
 ## Technologies Used
